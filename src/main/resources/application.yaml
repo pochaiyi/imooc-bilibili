@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: test
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${config.mysql.url}
+    username: ${config.mysql.username}
+    password: ${config.mysql.password}
+  redis:
+    host: ${config.redis.host}
+    port: ${config.redis.port}
+
+rocketmq:
+  name-server:
+    address: ${config.rmq-namesrv.address}
+
+fdfs:
+  tracker-list: ${config.fdfs-tracker.address}
+  source-address: http://${remote-service-address}:8888/group1/
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

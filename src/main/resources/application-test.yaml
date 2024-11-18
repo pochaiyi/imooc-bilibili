@@ -1,0 +1,17 @@
+remote-service-address: 192.168.200.101
+
+config:
+  mysql:
+    url: jdbc:mysql://${remote-service-address}:3306/imooc_bilibili
+    username: root
+    password: root
+  redis:
+    host: ${remote-service-address}
+    port: 6379
+  rmq-namesrv:
+    address: ${remote-service-address}:9876
+  fdfs-tracker:
+    address: ${remote-service-address}:22122
+
+file:
+  temple-location: C:\\Users\\pochaiyi\\Videos\\temple\\
